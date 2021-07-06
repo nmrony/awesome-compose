@@ -1,5 +1,5 @@
 ## Compose sample application
-### Python/Flask application with Nginx proxy and a Mongo database
+### Python/Flask application
 
 Project structure:
 ```
@@ -37,7 +37,7 @@ Creating flask_web_1 ... done
 
 ## Expected result
 
-Listing containers must show two containers running and the port mapping as below:
+Listing containers must show one container running and the port mapping as below:
 ```
 $ docker ps
 CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                  NAMES

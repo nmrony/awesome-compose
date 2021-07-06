@@ -50,7 +50,7 @@ Creating nginx-flask-mongo_web_1     ... done
 
 ## Expected result
 
-Listing containers must show two containers running and the port mapping as below:
+Listing containers must show three containers running and the port mapping as below:
 ```
 $ docker ps
 CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                  NAMES
@@ -62,7 +62,7 @@ d7eea5481c77        mongo                       "docker-entrypoint.s…"   About
 After the application starts, navigate to `http://localhost:80` in your web browser or run:
 ```
 $ curl localhost:80
-Hello fom the MongoDB client!
+Hello from the MongoDB client!
 ```
 
 Stop and remove the containers

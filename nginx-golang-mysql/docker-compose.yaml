@@ -4,12 +4,18 @@ services:
     build: backend
     secrets:
       - db-password
-    depends_on: 
-      - db
+    depends_on:
+      db:
+        condition: service_healthy
   db:
     image: mysql:8.0.19
     command: '--default-authentication-plugin=mysql_native_password'
     restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 3s
+      retries: 5
+      start_period: 30s
     secrets:
       - db-password
     volumes:
@@ -17,6 +23,8 @@ services:
     environment:
       - MYSQL_DATABASE=example
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
+    expose:
+      - 3306
   proxy:
     build: proxy
     ports:

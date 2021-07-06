@@ -24,7 +24,7 @@ services:
     build: backend
     ...
   db:
-    image: mysql:5.7
+    image: mysql:8.0.19
     ...
   proxy:
     build: proxy
@@ -55,7 +55,7 @@ Creating nginx-golang-mysql_proxy_1   ... done
 
 ## Expected result
 
-Listing containers must show two containers running and the port mapping as below:
+Listing containers must show three containers running and the port mapping as below:
 ```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
